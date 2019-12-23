@@ -1,0 +1,25 @@
+@import "../base/utilities";
+
+.feature-box {
+  background-color: rgba($color-white, 0.8);
+  font-size: 1.5rem;
+  padding: 4rem;
+  text-align: center;
+  border-radius: 0.3rem;
+  box-shadow: 0 1.5rem 4rem rgba($color-black, 0.15);
+  transition: transform 0.2s;
+
+  &__icon {
+    display: inline-block;
+    font-size: 6rem;
+    padding: 0 0.2rem 2rem 0.2rem;
+    @include text-gradient(top left);
+  }
+
+  &:hover {
+    transform: translateY(-1.5rem) scale(1.03) translate3d(0, 0, 0);
+  }
+
+  &__text {
+  }
+}

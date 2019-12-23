@@ -1,0 +1,61 @@
+@import "./utilities";
+
+body {
+  padding: 3rem;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  line-height: 1.7;
+  color: $color-grey-dark;
+}
+
+.heading-primary {
+  color: $color-white;
+  text-transform: uppercase;
+  backface-visibility: hidden;
+  margin-bottom: 6rem;
+
+  &--main {
+    display: block;
+    font-size: 6rem;
+    font-weight: 700;
+    letter-spacing: 3rem;
+
+    animation-name: translateLeft;
+    animation-duration: 1s;
+    animation-timing-function: $animation-curve;
+  }
+
+  &--sub {
+    display: block;
+    font-size: $default-font-size;
+    font-weight: 300;
+    letter-spacing: 1.4rem;
+
+    animation-name: translateRight;
+    animation-duration: 1s;
+    animation-timing-function: $animation-curve;
+  }
+}
+
+.heading-secondary {
+  display: inline-block;
+  font-size: 4rem;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  @include text-gradient(top left);
+}
+
+.heading-tertiary {
+  font-size: $default-font-size;
+  font-weight: 700;
+  text-transform: uppercase;
+  @include text-gradient(bottom right);
+}
+
+.paragraph {
+  font-size: 1.4rem;
+  &:not(:last-child) {
+    margin-bottom: 3rem;
+  }
+}

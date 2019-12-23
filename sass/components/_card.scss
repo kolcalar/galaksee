@@ -1,0 +1,187 @@
+.card {
+  perspective: 100rem;
+  -moz-perspective: 100rem;
+  position: relative;
+  height: 52rem;
+
+  &__side {
+    background-color: orangered;
+    height: 52rem;
+    transition: all 0.9s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    border-radius: 0.4rem;
+    overflow: hidden;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, 0.15);
+
+    &--front {
+      background-color: $color-white;
+    }
+
+    &--back {
+      transform: rotateY(180deg);
+
+      &-1 {
+        background-image: linear-gradient(
+          to bottom left,
+          $gradient1-primary,
+          $gradient1-secondary
+        );
+      }
+
+      &-2 {
+        background-image: linear-gradient(
+          to right bottom,
+          $color-primary,
+          $color-secondary
+        );
+      }
+
+      &-3 {
+        background-image: linear-gradient(
+          to right bottom,
+          $gradient2-primary,
+          $gradient2-secondary
+        );
+      }
+    }
+  }
+
+  &:hover &__side--front {
+    transform: rotateY(-180deg);
+  }
+
+  &:hover &__side--back {
+    transform: rotateY(0);
+  }
+
+  &__picture {
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: screen;
+    height: 23rem;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+
+    &-1 {
+      background-image: linear-gradient(
+          to bottom left,
+          $color-secondary,
+          $color-primary
+        ),
+        url(../images/tour1.jpg);
+    }
+
+    &-2 {
+      background-image: linear-gradient(
+          to bottom right,
+          $color-tertiary,
+          $gradient2-primary
+        ),
+        url(../images/tour2.jpg);
+    }
+
+    &-3 {
+      background-image: linear-gradient(
+          to top left,
+          $gradient1-secondary,
+          $color-primary
+        ),
+        url(../images/tour3.jpg);
+    }
+  }
+
+  &__heading {
+    font-size: 2.8rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    color: $color-white;
+    text-align: right;
+    position: absolute;
+    top: 12rem;
+    right: 2rem;
+    width: 75%;
+    line-height: 5.4rem;
+  }
+
+  &__heading-span {
+    padding: 1rem 1.5rem;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+
+    &-1 {
+      background-image: linear-gradient(
+        to bottom left,
+        rgba($color-secondary, 0.85),
+        rgba($color-primary, 0.85)
+      );
+    }
+
+    &-2 {
+      background-image: linear-gradient(
+        to bottom left,
+        rgba($color-secondary, 0.85),
+        rgba($color-primary, 0.85)
+      );
+    }
+
+    &-3 {
+      background-image: linear-gradient(
+        to top left,
+        rgba($gradient1-secondary, 0.85),
+        rgba($color-primary, 0.85)
+      );
+    }
+  }
+
+  &__details {
+    padding: 2rem;
+
+    p {
+      font-size: 1rem;
+    }
+
+    ul {
+      list-style: none;
+      width: 90%;
+      margin: 0 auto;
+
+      li {
+        text-align: center;
+        font-size: 1.5rem;
+        padding: 1rem;
+        &:not(:last-child) {
+          border-bottom: 1px solid $color-grey-light-2;
+        }
+      }
+    }
+  }
+
+  &__cta {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    text-align: center;
+  }
+
+  &__price-box {
+    margin-bottom: 8rem;
+    color: $color-white;
+  }
+
+  &__price-only {
+    font-size: 1.4rem;
+    text-transform: uppercase;
+  }
+
+  &__price-value {
+    font-size: 5rem;
+    font-weight: 100;
+  }
+}
